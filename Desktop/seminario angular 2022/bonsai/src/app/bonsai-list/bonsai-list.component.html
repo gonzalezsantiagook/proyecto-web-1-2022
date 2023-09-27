@@ -1,0 +1,20 @@
+<table class="table table-striped-columns">
+    <thead class="table-light">
+    <tr>
+        <th>imagen</th>
+        <th>Nombre</th>
+        <th>tipo</th>
+        <th>Precio</th>
+        <th>Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bonsai of bonsais" [ngClass]="{'clearance': bonsai.clearance}">
+        <td><img [src]="bonsai.image" class="img-fluid" [alt]="bonsai.image"></td>
+        <td>{{bonsai.name}}</td>
+        <td>{{bonsai.type}}</td>
+        <td>{{bonsai.price | currency}}</td>
+        <td><span class="badge text-bg-info" *ngIf="bonsai.stock==0"> Sin stock </span></td>
+    </tr>
+</tbody>
+</table>
